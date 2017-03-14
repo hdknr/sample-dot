@@ -21,7 +21,7 @@ Login as an administrator:
 
     - http://shop.local:8000/admin/
 
-Register an `Application`:
+Register an `Application` for [sampple-psa#oauth2](https://github.com/hdknr/sample-psa/tree/oauth2):
 
     - http://shop.local:8000/accounts/o/applications/
 
