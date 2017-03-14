@@ -128,5 +128,11 @@ INSTALLED_APPS += [
 
 MIDDLEWARE += [
     'corsheaders.middleware.CorsMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
 # CORS_ORIGIN_ALLOW_ALL = True
+
+from django.conf import global_settings
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+] + global_settings.AUTHENTICATION_BACKENDS
