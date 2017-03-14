@@ -125,3 +125,8 @@ INSTALLED_APPS += [
     'corsheaders',          # CORS headers
     'accounts',             # accounts app
 ]
+
+MIDDLEWARE += [
+    'corsheaders.middleware.CorsMiddleware',
+]
+# CORS_ORIGIN_ALLOW_ALL = True
