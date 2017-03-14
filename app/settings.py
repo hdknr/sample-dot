@@ -120,3 +120,6 @@ STATIC_URL = '/static/'
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 ALLOWED_HOSTS = ['develop.local', 'shop.local', ]
+INSTALLED_APPS += [
+    'accounts',
+]
