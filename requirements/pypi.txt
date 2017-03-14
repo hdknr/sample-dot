@@ -1,0 +1,12 @@
+# Framework
+django
+pytz
+
+# OAuh2
+# https://github.com/evonove/django-oauth-toolkit
+django-oauth-toolkit
+# https://github.com/ottoyiu/django-cors-headers
+django-cors-headers
+
+# Management Commands
+django-click
