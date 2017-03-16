@@ -11,8 +11,10 @@ Django OAuth Toolkit samle
 ## Install
 
 ~~~py
+$ pip install -r requirements/pypi.txt
 $ python manage.py migrate
 $ python manage.py createsuperuser
+$ python manage.py runserver 0.0.0.0:8000
 ~~~
 
 ## Create an `Application` for a Relying Party
