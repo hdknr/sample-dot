@@ -48,3 +48,37 @@ $ python manage.py dumpdata oauth2_provider.application  --indent=2
 }
 ]
 ~~~
+
+## Request authentication
+
+settings.MIDDLEWARE:
+
+~~~py
+MIDDLEWARE += [
+    ...
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
+]
+~~~
+
+settings.AUTHENTICATION_BACKENDS:
+
+~~~py
+from django.conf import global_settings
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+] + global_settings.AUTHENTICATION_BACKENDS
+~~~
+
+API:
+
+~~~py
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def now(request):
+   data = {
+       'datetime': str(timezone.now()),
+       'user': str(request.user),       # Authenticated with Bearer Token
+   }
+   return JsonResponse(data)
+~~~
